@@ -25,11 +25,13 @@
 
 #include <cstdint>
 #include <cstdio>
+#include <cstring>
 
 #include <list>
 #include <unordered_map>
 #include <stack>
 #include <string>
+#include <vector>
 
 #ifdef _WIN32
 #include <fcntl.h>
@@ -258,7 +260,7 @@ int main(int argc, char *argv[])
 		[](void *ctx, long long integer)
 		{
 			json_data_state *state = (json_data_state *) ctx;
-			return (int) (state->insert(integer) != nullptr);
+			return (int) (state->insert((int64_t) integer) != nullptr);
 		},
 		// read double
         [](void *ctx, double real)

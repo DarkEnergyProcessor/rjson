@@ -14,18 +14,16 @@ cl /Ferjson.exe /O2 program.cpp JSonParser\*.c
 ```
 
 ### Clang
+
 ```
-clang -O2 -o rjson program.cpp JSonParser/*.c
+clang++ -O2 -o rjson program.cpp -xc JSonParser/*.c
 ```
 
 Add `.exe` suffix for `-o` on Windows.
 
 ### GCC
-```
-gcc -O2 -o rjson program.cpp JSonParser/*.c
-```
 
-Add `.exe` suffix for `-o` on Windows.
+No instruction for GCC because it doesn't support single-command compilation of mixed C and C++ files. Blame GNU!
 
 License
 -----
